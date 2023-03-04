@@ -1,0 +1,51 @@
+<header class="header">
+  <div class="header-wrapper">
+    <div class="header-container">
+      <div class="header-title">
+        <a><img src="../../../../assets/logo.svg" alt="Logo" /> PM</a>
+      </div>
+      <div>
+        <button
+          [disabled]="!isSingIn"
+          mat-raised-button
+          title="{{ 'header.settingsTitle' }}"
+          mat-button
+        >
+          <mat-icon> person </mat-icon>
+        </button>
+        <button
+          [disabled]="!isSingIn"
+          mat-raised-button
+          title="{{ 'header.addBoard' }}"
+        >
+          <mat-icon> add_box </mat-icon>
+        </button>
+        <button
+          [matMenuTriggerFor]="languageMenu"
+          mat-raised-button
+          title="{{ 'header.translation' }}"
+        >
+          <mat-icon>g_translate</mat-icon>
+          <mat-menu #languageMenu="matMenu">
+            <button mat-menu-item (click)="saveToLocal('en')">en</button>
+            <button mat-menu-item (click)="saveToLocal('ukr')">ukr</button>
+          </mat-menu>
+        </button>
+        <button
+          mat-raised-button
+          routerLink="/singin"
+          title="{{ 'header.logInSignUp' }}"
+        >
+          <mat-icon> login </mat-icon>
+        </button>
+        <button
+          mat-raised-button
+          title="{{ 'header.logOut' }}"
+          (click)="logOut()"
+        >
+          <mat-icon> logout </mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

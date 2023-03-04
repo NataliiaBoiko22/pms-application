@@ -1,0 +1,45 @@
+@import "../../../../assets/utils.scss";
+
+.header-wrapper {
+  padding: 25px 35px;
+  background: $light-white;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-weight: 700;
+
+  font-size: 36px;
+  font-style: oblique;
+  -webkit-text-stroke: 0.001em $white;
+}
+
+button {
+  margin-right: 5px;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+@media (max-width: 474px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .header-title {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .mat-raised-button {
+    min-width: 50px;
+  }
+}
