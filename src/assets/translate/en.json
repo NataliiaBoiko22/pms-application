@@ -43,5 +43,14 @@
     "noLongerName": "*your name should be no longer than 20",
     "onlySmallOrNumbers": "*should use only small letters or numbers",
     "noLongerPassword": "*your password should be no longer than 20"
+  },
+  "profile": {
+    "title": "Settings",
+    "name": "Name",
+    "login": "Login",
+    "password": "Password",
+    "delete": "Delete user",
+    "cancel": "Cancel",
+    "save": "Save"
   }
 }

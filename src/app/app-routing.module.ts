@@ -9,12 +9,17 @@ const routes: Routes = [
     path: 'singin',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  
+
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent, canLoad: [AuthGuard] },
   {
     path: '**',
     component: NotFoundComponent,
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
+    canLoad: [AuthGuard],
   },
 ];
 
