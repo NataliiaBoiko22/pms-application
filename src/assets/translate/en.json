@@ -52,5 +52,26 @@
     "delete": "Delete user",
     "cancel": "Cancel",
     "save": "Save"
-  }
+  },
+  "windowData": {
+    "deleteUser": {
+      "title": "Delete User",
+      "description": "Do you really want to delete the User?"
+    },
+    "logOut": {
+      "title": "Log Out",
+      "description": "Do you really want to log out?"
+    },
+    "save": {
+      "title": "Successful!",
+      "description": "Your settings have been saved"
+    },
+    "errorHTTP": {
+      "title": "HTTP Error",
+      "description": ""
+    }
+  },
+  "modalWindowYes": "Yes",
+  "modalWindowNo": "No",
+  "modalWindowOk": "Ok"
 }

@@ -7,10 +7,12 @@ import {
   SignInBody,
   SignUpBody,
 } from 'src/app/core/types/auth.types';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  public token = '';
   isSingInFromStorage = !!localStorage.getItem('token');
 
   isSingIn$ = new BehaviorSubject(this.isSingInFromStorage);
@@ -19,7 +21,15 @@ export class AuthService {
 
   signUp(data: SignUpBody): void {
     this.httpResponse.signUp(data).subscribe((resp) => {
+      console.log(resp);
+
       if (typeof resp === 'object' && '_id' in resp) {
+        localStorage.setItem('userId', resp._id);
+      }
+
+      if (typeof resp === 'object' && '_id' in resp) {
+        console.log(resp._id);
+
         this.httpResponse
           .singIn({
             login: data.login,
@@ -27,6 +37,8 @@ export class AuthService {
           })
           .subscribe((respSingIn) => {
             if (typeof respSingIn === 'object' && 'token' in respSingIn) {
+              console.log(respSingIn);
+
               this.setSingInConfigs(respSingIn);
             }
           });
@@ -46,11 +58,13 @@ export class AuthService {
       }
     });
   }
+  public setToken(token: string) {
+    this.token = token;
+  }
 
   setSingInConfigs(respSingIn: SignInResponseBody): void {
     this.isSingIn$.next(true);
     localStorage.setItem('token', respSingIn.token);
-    localStorage.setItem('userId', respSingIn._id);
     this.router.navigateByUrl('/main');
   }
 

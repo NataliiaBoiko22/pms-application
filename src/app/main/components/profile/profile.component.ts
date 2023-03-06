@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { patterns } from 'src/app/auth/components/singup/singup.constants';
-import { PopUpService } from 'src/app/core/services/pop-up.service';
 import { ProfileService } from '../../services/profile.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SignUpBody } from 'src/app/core/types/auth.types';
-import { take } from 'rxjs';
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -35,22 +35,20 @@ export class ProfileComponent {
   controlPassword = this.userUpdateForm.get('password') as FormControl;
 
   constructor(
-    private userService: ProfileService,
-    private modalService: PopUpService,
+    private profileService: ProfileService,
     private apiService: HttpService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     const userId = localStorage.getItem('userId') as string;
-    setTimeout(() => {
-      this.apiService.getUser(userId).subscribe((value) => {
-        if ('_id' in value) {
-          this.controlName.setValue(value.name);
-          this.controlLogin.setValue(value.login);
-        }
-        return value;
-      });
-    }, 0);
+
+    this.apiService.getUser(userId).subscribe((value) => {
+      if ('_id' in value) {
+        this.controlName.setValue(value.name);
+        this.controlLogin.setValue(value.login);
+      }
+      return value;
+    });
   }
 
   changeUserData(): void {
@@ -59,22 +57,11 @@ export class ProfileComponent {
     }
     const data = this.userUpdateForm.value as SignUpBody;
     const userId = localStorage.getItem('userId') as string;
-    this.userService.updateUser(userId, data);
+    this.profileService.updateUser(userId, data);
   }
 
   deleteUser(): void {
-    this.modalService.modalHandler$.next({
-      type: 'confirm',
-      emitter: 'User',
-      action: 'delete',
-      payload: '',
-    });
-    this.modalService.modalEmitter$.pipe(take(1)).subscribe((result) => {
-      if (result === 'confirm') {
-        const userId = localStorage.getItem('userId') as string;
-        this.userService.deleteUser(userId);
-      }
-      return;
-    });
+    const userId = localStorage.getItem('userId') as string;
+    this.profileService.deleteUser(userId);
   }
 }

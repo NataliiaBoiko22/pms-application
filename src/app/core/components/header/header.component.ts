@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 import { TranslateService } from '@ngx-translate/core';
-import { PopUpService } from '../../services/pop-up.service';
-import { take } from 'rxjs';
+
+
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from 'src/app/main/components/profile/profile.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -18,12 +19,12 @@ export class HeaderComponent {
     this.isSingIn = value;
     return value;
   });
-
   constructor(
     private auth: AuthService,
-    private modalService: PopUpService,
+
     public translate: TranslateService,
-    public prof: MatDialog
+    public prof: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,7 +35,12 @@ export class HeaderComponent {
     this.prof.open(ProfileComponent);
   }
 
-  logOut() {}
+  logOut(): void {
+    // this.isSingIn$.next(false);
+    localStorage.clear();
+    this.router.navigateByUrl('/welcome');
+    this.auth.logOut();
+  }
 
   saveToLocal(lang: string): void {
     localStorage.setItem('lang', lang);

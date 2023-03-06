@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PopUpService } from 'src/app/core/services/pop-up.service';
+
 import { HttpService } from 'src/app/core/services/http.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { BehaviorSubject } from 'rxjs';
@@ -16,19 +16,13 @@ export class ProfileService {
   constructor(
     private httpResponse: HttpService,
     private auth: AuthService,
-    private modalService: PopUpService,
+
     private userServiceAddition: UsersService
   ) {}
 
   updateUser(userId: string, data: SignUpBody): void {
     this.httpResponse.updateUser(userId, data).subscribe((resp) => {
       if (typeof resp === 'object' && '_id' in resp) {
-        this.modalService.modalHandler$.next({
-          type: 'message',
-          emitter: 'User',
-          action: 'save',
-          payload: '',
-        });
         this.updateUsersList();
       }
     });

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopupComponent } from './popup.component';
+import { MatDialogComponent } from './mat-dialog.component';
 
-describe('PopupComponent', () => {
-  let component: PopupComponent;
-  let fixture: ComponentFixture<PopupComponent>;
+describe('MatDialogComponent', () => {
+  let component: MatDialogComponent;
+  let fixture: ComponentFixture<MatDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PopupComponent ]
+      declarations: [ MatDialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PopupComponent);
+    fixture = TestBed.createComponent(MatDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

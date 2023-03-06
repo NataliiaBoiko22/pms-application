@@ -9,21 +9,19 @@ import { MaterialModule } from '../material/material';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-// import {
-//   BoardCreationDialogComponent,
-//   BoardCreationFormComponent,
-// } from './components';
 import { InterceptorService } from './services/interceptor.service';
 import { InvalidTokenInterceptor } from './interceptors/invalid-token.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { PopupComponent } from './components/popup/popup.component';
+
+import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NotFoundComponent,
     WelcomeComponent,
-    PopupComponent,
+
+    MatDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +46,6 @@ import { PopupComponent } from './components/popup/popup.component';
       multi: true,
     },
   ],
-  exports: [HeaderComponent, PopupComponent, MaterialModule],
+  exports: [HeaderComponent, MaterialModule],
 })
 export class CoreModule {}
