@@ -1,5 +1,5 @@
 <mat-dialog-content class="mat-typography">
-  <form [formGroup]="userUpdateForm">
+  <form [formGroup]="userUpdateForm" align="center">
     <h2>{{ "profile.title" | translate }}</h2>
     <mat-form-field>
       <mat-label for="inputName1">{{ "profile.name" | translate }}</mat-label>
@@ -90,7 +90,7 @@
     mat-raised-button
     color="warn"
     [mat-dialog-close]="true"
-    (click)="deleteUser()"
+    (click)="openDialog()"
   >
     {{ "profile.delete" | translate }}
   </button>

@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PopUpResultType } from '../../types/pop-up.types';
+import { DialogData } from '../../types/pop-up.types';
 import { PopUpProperties } from '../../types/pop-up.types';
 
 @Component({
@@ -10,11 +10,11 @@ import { PopUpProperties } from '../../types/pop-up.types';
 })
 export class MatDialogComponent {
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: PopUpProperties,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
     public dialogRef: MatDialogRef<MatDialogComponent>
   ) {}
 
-  close(confirm: PopUpResultType): void {
+  close(confirm: PopUpProperties): void {
     this.dialogRef.close(confirm);
   }
 }

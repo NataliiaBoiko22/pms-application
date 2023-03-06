@@ -71,6 +71,12 @@
       "description": ""
     }
   },
+
+  "massage":{
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  
+  },
   "modalWindowYes": "Yes",
   "modalWindowNo": "No",
   "modalWindowOk": "Ok"

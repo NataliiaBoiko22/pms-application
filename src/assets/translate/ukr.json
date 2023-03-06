@@ -55,23 +55,27 @@
   },
   "windowData": {
     "deleteUser": {
-      "title": "Delete User",
-      "description": "Do you really want to delete the User?"
+      "title": "Видалити користувача",
+      "description": "Іи дійсно хочете видалити користувача?"
     },
     "logOut": {
-      "title": "Log Out",
-      "description": "Do you really want to log out?"
+      "title": "Вийти",
+      "description": "Ви дійсно хочете вийти?"
     },
     "save": {
-      "title": "Successful!",
-      "description": "Your settings have been saved"
+      "title": "Виконано!",
+      "description": "Налаштування збережені"
     },
     "errorHTTP": {
       "title": "HTTP Error",
       "description": ""
     }
   },
-  "modalWindowYes": "Yes",
-  "modalWindowNo": "No",
-  "modalWindowOk": "Ok"
+  "massage": {
+    "cancel": "Відмінити",
+    "confirm": "Підтвердити"
+  },
+  "modalWindowYes": "Так",
+  "modalWindowNo": "Ні",
+  "modalWindowOk": "Ок"
 }

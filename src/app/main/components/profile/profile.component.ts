@@ -4,8 +4,8 @@ import { patterns } from 'src/app/auth/components/singup/singup.constants';
 import { ProfileService } from '../../services/profile.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SignUpBody } from 'src/app/core/types/auth.types';
-
-
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogComponent } from 'src/app/core/components/mat-dialog/mat-dialog.component';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -36,7 +36,8 @@ export class ProfileComponent {
 
   constructor(
     private profileService: ProfileService,
-    private apiService: HttpService
+    private apiService: HttpService,
+    public dialog: MatDialog
   ) {}
 
   async ngOnInit() {
@@ -63,5 +64,20 @@ export class ProfileComponent {
   deleteUser(): void {
     const userId = localStorage.getItem('userId') as string;
     this.profileService.deleteUser(userId);
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(MatDialogComponent, {
+      data: {
+        message:
+          localStorage.getItem('lang') === 'ukr'
+            ? 'Ви дісно бажаєте видалити ваш акаунт?'
+            : 'Are you sure you want to delete your account?',
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.deleteUser();
+      }
+    });
   }
 }
