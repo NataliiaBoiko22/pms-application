@@ -77,5 +77,26 @@
   },
   "modalWindowYes": "Так",
   "modalWindowNo": "Ні",
-  "modalWindowOk": "Ок"
+  "modalWindowOk": "Ок",
+  "mainPage": {
+    "mainPageTitle": "Дошки",
+    "boardsFormTitle": "Створити дошку",
+    "boardName": "Назва",
+    "boardSelectUser": "Користувачі",
+    "createBoardButton": "Створити дошку",
+    "enterBoardTitlePlaceholder": "Введіть назву дошки",
+    "filters": "Фильтр",
+    "title": "Заголовок",
+    "boardOwner": "Власник",
+    "none": "Без вибору",
+    "searchCriteria": "Критерії пошуку",
+    "searchRequest": "Пошуковий запит",
+    "searchHint": "Частина заголовку",
+    "board": "Дошка",
+    "taskOwner": "Власник завдання",
+    "tasks": "Завдання",
+    "keywordsPlaceholder": "Введіть запит",
+    "messagePart1": "Дошка",
+    "messagePart2": "Створено"
+  }
 }

@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from 'src/app/main/components/profile/profile.component';
 import { Router } from '@angular/router';
 import { MatDialogComponent } from '../mat-dialog/mat-dialog.component';
-
+import { BoardAddDialogComponent } from '../board-add-dialog/board-add-dialog.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -58,5 +58,8 @@ export class HeaderComponent {
   saveToLocal(lang: string): void {
     localStorage.setItem('lang', lang);
     this.translate.use(lang);
+  }
+  openDialogBoard(): void {
+    this.dialog.open(BoardAddDialogComponent);
   }
 }

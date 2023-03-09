@@ -14,6 +14,8 @@ import { InvalidTokenInterceptor } from './interceptors/invalid-token.intercepto
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
 import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
+import { BoardAddDialogComponent } from './components/board-add-dialog/board-add-dialog.component';
+import { BoardAddFormComponent } from './components/board-add-form/board-add-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component
     WelcomeComponent,
 
     MatDialogComponent,
+     BoardAddDialogComponent,
+     BoardAddFormComponent,
   ],
   imports: [
     CommonModule,

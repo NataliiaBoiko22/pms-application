@@ -12,6 +12,8 @@ import {
   SignInResponseBody,
   SignInBody,
 } from '../types/auth.types';
+import { Column, ColumnBody } from '../types/column.types';
+import { Board, BoardBody } from '../types/board.types';
 @Injectable({
   providedIn: 'root',
 })
@@ -80,6 +82,90 @@ export class HttpService {
   ): Observable<SignInResponseBody | Observable<never>> {
     return this.http
       .post<SignInResponseBody>(this.url + this.singInPath, params)
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+
+  public getAllColumns(
+    boardId: string
+  ): Observable<Column[] | Observable<never>> {
+    return this.http
+      .get<Column[]>(
+        this.url + this.boardsPath + '/' + boardId + this.columnsPath
+      )
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+
+  public getColumn(
+    boardId: string,
+    columnId: string
+  ): Observable<Column | Observable<never>> {
+    return this.http
+      .get<Column>(
+        this.url +
+          this.boardsPath +
+          '/' +
+          boardId +
+          this.columnsPath +
+          '/' +
+          columnId
+      )
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+  public createColumn(
+    boardId: string,
+    params: ColumnBody
+  ): Observable<Column | Observable<never>> {
+    return this.http
+      .post<Column>(
+        this.url + this.boardsPath + '/' + boardId + this.columnsPath,
+        params
+      )
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+
+  public updateColumn(
+    boardId: string,
+    columnId: string,
+    params: ColumnBody
+  ): Observable<Column | Observable<never>> {
+    return this.http
+      .put<Column>(
+        this.url +
+          this.boardsPath +
+          '/' +
+          boardId +
+          this.columnsPath +
+          '/' +
+          columnId,
+        params
+      )
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+
+  public deleteColumn(
+    boardId: string,
+    columnId: string
+  ): Observable<Column | Observable<never>> {
+    return this.http
+      .delete<Column>(
+        this.url +
+          this.boardsPath +
+          '/' +
+          boardId +
+          this.columnsPath +
+          '/' +
+          columnId
+      )
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+  public getAllBoards(): Observable<Board[] | Observable<never>> {
+    return this.http
+      .get<Board[]>(this.url + this.boardsPath)
+      .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
+  }
+  public createBoard(params: BoardBody): Observable<Board | Observable<never>> {
+    return this.http
+      .post<Board>(this.url + this.boardsPath, params)
       .pipe(catchError(async (err) => this.httpError.catchErrors(err)));
   }
 }

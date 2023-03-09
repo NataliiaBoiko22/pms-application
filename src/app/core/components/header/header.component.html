@@ -18,6 +18,7 @@
           [disabled]="!isSingIn"
           mat-raised-button
           title="{{ 'header.addBoard' }}"
+          (click)="openDialogBoard()"
         >
           <mat-icon> add_box </mat-icon>
         </button>

@@ -1,0 +1,27 @@
+<div class="board__controls">
+  <button type="button" mat-raised-button color="primary" (click)="goToMain()">
+    {{ "boardPage.goToMain" }}
+  </button>
+
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="openDialogColumn()"
+  >
+    {{ "boardPage.createColumn" }}
+  </button>
+</div>
+
+<div class="board__container">
+  <button
+    *ngIf="!columns.length"
+    type="button"
+    mat-raised-button
+    class="board__button-create"
+    color="warn"
+    (click)="openDialogColumn()"
+  >
+    {{ "boardPage.createColumn" }}
+  </button>
+</div>

@@ -1,0 +1,17 @@
+<mat-tab-group dynamicHeight mat-align-tabs="center">
+  <mat-tab label="{{ 'mainPage.mainPageTitle' | translate }}">
+    <!-- <app-boards-filter></app-boards-filter> -->
+    <div class="main__boards">
+      <app-board-box *ngFor="let board of boardItems" [boardData]="board">
+      </app-board-box>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{ 'mainPage.tasks' | translate }}">
+    <!-- <app-search-criteria></app-search-criteria>
+    <div class="tasks__container">
+      <app-task-item *ngFor="let task of taskItems" [taskData]="task">
+      </app-task-item>
+    </div> -->
+  </mat-tab>
+</mat-tab-group>
