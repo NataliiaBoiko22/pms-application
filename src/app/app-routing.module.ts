@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './core/pages/welcome/welcome.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { NotFoundComponent } from './core/pages/not-found/not-found.component';
+import { BoardsPageComponent } from './main/boards-page/boards-page.component';
+import { PageComponent } from './board/page/page.component';
 
 const routes: Routes = [
   {
@@ -12,14 +14,20 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent, canLoad: [AuthGuard] },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  },
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent,
+  // },
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
     canLoad: [AuthGuard],
+  },
+
+  {
+    path: 'board',
+    loadChildren: () =>
+      import('./board/board.module').then((m) => m.BoardModule),
   },
 ];
 

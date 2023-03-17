@@ -4,14 +4,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IsOwnerMarkDirective } from './shared/directives/is-owner-mark.directive';
 import { MaterialModule } from './material/material';
 import { CoreModule } from './core/core.module';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { LottieModule, LottieCacheModule } from 'ngx-lottie';
 import { HttpService } from './core/services/http.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 ////////////////////////
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
@@ -22,7 +21,7 @@ export function playerFactory() {
   return import('lottie-web');
 }
 @NgModule({
-  declarations: [AppComponent, IsOwnerMarkDirective],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +30,7 @@ export function playerFactory() {
     MaterialModule,
     CoreModule,
     FormsModule,
-
+    ReactiveFormsModule,
     ////////////////////////////
     TranslateModule.forRoot({
       loader: {
@@ -41,10 +40,8 @@ export function playerFactory() {
       },
       defaultLanguage: 'en',
     }),
-    LottieModule.forRoot({ player: playerFactory }),
-    LottieCacheModule.forRoot(),
   ],
-  exports: [AppRoutingModule, TranslateModule, MaterialModule],
+  exports: [TranslateModule, MaterialModule],
   providers: [HttpService],
   bootstrap: [AppComponent],
 })

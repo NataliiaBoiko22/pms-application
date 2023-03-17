@@ -28,6 +28,7 @@ export class SinginComponent {
 
   onSingInButton(): void {
     const data = this.authForm.value as SignInBody;
+    localStorage.setItem('login', data.login);
     if (this.authForm.invalid) {
       return;
     }

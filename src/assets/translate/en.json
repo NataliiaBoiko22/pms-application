@@ -2,7 +2,7 @@
   "welcome": {
     "welcomeTitle": "Project management",
     "welcomeDescription": "The project management application will help solve work tasks efficiently. Application is a digital board that provides a visual of the work you need to get done. You can move and prioritize tasks on a project board as the project evolves and changes. A project board allows you to easily see the big picture so you can prioritize tasks effectively. It’s also an effective and efficient way of managing the work of your team and keeping everyone on the same page.",
-    "startplanningbutton": "Let start!",
+    "startbutton": "Let start!",
     "welcomeBenefits": "Benefits",
     "benefitsDescriptionOne": "Get a high-level view of project progress",
     "benefitsDescriptionTwo": "Know exactly what stage any given project is at ",
@@ -15,11 +15,12 @@
     "oppotunitiesDescriptionFour": "Estimate timelines, plan, monitor and track tasks"
   },
   "header": {
+    "goToMain": "Main",
     "settingsTitle": "Settings",
-    "addBoard": "Add Board",
+    "addBoard": "+ Board",
     "translation": "Language",
-    "logInSignUp": "Login/Sign Up",
-    "logOut": "Logout"
+    "logIn": "LogIn",
+    "logOut": "LogOut"
   },
   "authorization": {
     "logIn": "Log In",
@@ -72,23 +73,23 @@
     }
   },
 
-  "massage":{
+  "massage": {
     "cancel": "Cancel",
     "confirm": "Confirm"
-  
   },
   "modalWindowYes": "Yes",
   "modalWindowNo": "No",
   "modalWindowOk": "Ok",
-"mainPage": {
+  "mainPage": {
     "mainPageTitle": "Boards",
     "boardsFormTitle": "Create board",
     "boardName": "Name",
     "boardSelectUser": "User",
-    "createBoardButton": "Create board",
+    "createBoardButton": "Create",
     "enterBoardTitlePlaceholder": "Enter the board title",
     "filters": "Filters",
     "title": "Title",
+    "search": "Search board",
     "boardOwner": "Board owner",
     "none": "None",
     "searchCriteria": "Search criteria",
@@ -97,8 +98,18 @@
     "board": "Board",
     "taskOwner": "Task owner",
     "tasks": "Tasks",
-    "keywordsPlaceholder": "Enter keywords",
-    "messagePart1": "The board",
-    "messagePart2": "has been created"
+    "keywordsPlaceholder": "Enter keywords"
+  },
+  "boardPage": {
+    "createColumn": "Create column",
+    "create": "Create",
+    "createTask": "Create task",
+    "columnTitle": "Column title",
+    "enterColumnTitlePlaceholder": "Enter column title",
+    "taskTitle": "Task title",
+    "enterTaskTitlePlaceholder": "Enter task title",
+    "taskDescription": "Task description",
+    "enterTaskDescriptionPlaceholder": "Enter task description",
+    "cancel": "Cancel"
   }
 }

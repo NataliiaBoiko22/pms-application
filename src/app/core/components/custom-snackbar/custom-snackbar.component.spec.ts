@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardPageComponent } from './board-page.component';
+import { CustomSnackbarComponent } from './custom-snackbar.component';
 
-describe('BoardPageComponent', () => {
-  let component: BoardPageComponent;
-  let fixture: ComponentFixture<BoardPageComponent>;
+describe('CustomSnackbarComponent', () => {
+  let component: CustomSnackbarComponent;
+  let fixture: ComponentFixture<CustomSnackbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardPageComponent ]
+      declarations: [ CustomSnackbarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoardPageComponent);
+    fixture = TestBed.createComponent(CustomSnackbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

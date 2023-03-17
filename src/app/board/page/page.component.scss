@@ -1,5 +1,5 @@
 @use "../../../assets/styles/layout" as layout;
-// @use '../../../../styles/animations' as animations;
+@use "../../../assets/styles/animations" as animations;
 @use "../../../assets/utils.scss" as vars;
 @use "sass:color";
 
@@ -14,8 +14,8 @@
   .board {
     &__controls {
       display: flex;
-      margin-bottom: 16px;
-      column-gap: 16px;
+      margin-bottom: 15px;
+      column-gap: 15px;
     }
 
     &__container {
@@ -26,16 +26,19 @@
       box-sizing: border-box;
       width: 100%;
       height: 100%;
-      padding: 16px;
+      padding: 15px;
       overflow-x: auto;
-      column-gap: 16px;
-      background-color: color.scale(vars.$light-grey, $alpha: -50%);
+      column-gap: 15px;
+      background-color: color.scale(vars.$light-blue, $alpha: -50%);
     }
 
     &__button-create {
       display: block;
-      width: auto;
+      min-width: 250px;
+      height: 90px;
       filter: opacity(0.3);
+      border: 2.5px dashed vars.$light-grey;
+      border-radius: 8px;
       transition: filter 0.2s ease-out;
 
       &:hover {
@@ -45,4 +48,4 @@
   }
 }
 
-// @include animations.drag-and-drop-animation;
+@include animations.drag-and-drop-animation;

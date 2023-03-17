@@ -1,0 +1,13 @@
+<mat-toolbar class="task__header">
+  <div class="task-header">{{ taskData.title }}</div>
+  <button mat-icon-button (click)="openUpdateTaskDialog()">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="openDialog()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="task__description">
+  {{ taskData.description }}
+</div>

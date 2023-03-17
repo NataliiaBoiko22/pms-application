@@ -1,5 +1,5 @@
-// @use "../../../../styles/animations" as animations;
-
+@use "../../../../assets/styles/animations" as animations;
+@import "../../../../assets/utils.scss";
 :host {
   display: block;
   box-sizing: border-box;
@@ -11,17 +11,18 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-
-    // @include animations.hover-scale(1.02);
+    color: $grey;
+    @include animations.hover-scale(1.05);
 
     .mat-card-header {
       justify-content: center;
     }
 
-    // .board-item {
-    //   &__button {
-    // @include animations.hover-scale(1.1);
-    //   }
-    // }
+    .board-item {
+      &__button {
+        background-color: $light-blue;
+        @include animations.hover-scale(1.1);
+      }
+    }
   }
 }

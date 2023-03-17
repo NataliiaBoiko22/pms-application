@@ -1,8 +1,27 @@
 <header class="header">
   <div class="header-wrapper">
     <div class="header-container">
-      <div class="header-title">
+      <div class="header-logo">
         <a><img src="../../../../assets/logo.svg" alt="Logo" /> PM</a>
+      </div>
+      <div>
+        <button
+          type="button"
+          title="{{ 'header.goToMain' }}"
+          [disabled]="!isSingIn"
+          mat-raised-button
+          (click)="goToMain()"
+        >
+          {{ "header.goToMain" | translate }}
+        </button>
+        <button
+          [disabled]="!isSingIn"
+          mat-raised-button
+          title="{{ 'header.addBoard' }}"
+          (click)="openDialogBoard()"
+        >
+          {{ "header.addBoard" | translate }}
+        </button>
       </div>
       <div>
         <button
@@ -12,22 +31,15 @@
           mat-button
           (click)="openProfileUser()"
         >
-          <mat-icon> person </mat-icon>
+          <mat-icon class="icon"> person </mat-icon>
         </button>
-        <button
-          [disabled]="!isSingIn"
-          mat-raised-button
-          title="{{ 'header.addBoard' }}"
-          (click)="openDialogBoard()"
-        >
-          <mat-icon> add_box </mat-icon>
-        </button>
+
         <button
           [matMenuTriggerFor]="languageMenu"
           mat-raised-button
           title="{{ 'header.translation' }}"
         >
-          <mat-icon>g_translate</mat-icon>
+          <mat-icon class="icon">g_translate</mat-icon>
           <mat-menu #languageMenu="matMenu">
             <button mat-menu-item (click)="saveToLocal('en')">en</button>
             <button mat-menu-item (click)="saveToLocal('ukr')">ukr</button>
@@ -35,17 +47,18 @@
         </button>
         <button
           mat-raised-button
+          [disabled]="isSingIn"
           routerLink="/singin"
-          title="{{ 'header.logInSignUp' }}"
+          title="{{ 'header.logIn' }}"
         >
-          <mat-icon> login </mat-icon>
+          {{ "header.logIn" | translate }}
         </button>
         <button
           mat-raised-button
           title="{{ 'header.logOut' }}"
           (click)="logOut()"
         >
-          <mat-icon> logout </mat-icon>
+          {{ "header.logOut" | translate }}
         </button>
       </div>
     </div>

@@ -7,7 +7,7 @@ import {
   SignInBody,
   SignUpBody,
 } from 'src/app/core/types/auth.types';
-
+import { switchMap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -21,15 +21,11 @@ export class AuthService {
 
   signUp(data: SignUpBody): void {
     this.httpResponse.signUp(data).subscribe((resp) => {
-      console.log(resp);
-
       if (typeof resp === 'object' && '_id' in resp) {
         localStorage.setItem('userId', resp._id);
       }
 
       if (typeof resp === 'object' && '_id' in resp) {
-        console.log(resp._id);
-
         this.httpResponse
           .singIn({
             login: data.login,
@@ -37,8 +33,6 @@ export class AuthService {
           })
           .subscribe((respSingIn) => {
             if (typeof respSingIn === 'object' && 'token' in respSingIn) {
-              console.log(respSingIn);
-
               this.setSingInConfigs(respSingIn);
             }
           });
@@ -51,6 +45,7 @@ export class AuthService {
 
   singIn(data: SignInBody): void {
     this.httpResponse.singIn(data).subscribe((respSingIn) => {
+      console.log(respSingIn);
       if (typeof respSingIn === 'object' && 'token' in respSingIn) {
         this.setSingInConfigs(respSingIn);
       } else {
@@ -65,7 +60,18 @@ export class AuthService {
   setSingInConfigs(respSingIn: SignInResponseBody): void {
     this.isSingIn$.next(true);
     localStorage.setItem('token', respSingIn.token);
-    this.router.navigateByUrl('/main');
+    this.router.navigate(['main']);
+    this.httpResponse.getUsers().subscribe((value) => {
+      const login = localStorage.getItem('login');
+      value.forEach((el) => {
+        if (el.login === login) {
+          localStorage.setItem('userId', el._id);
+          localStorage.setItem('userName', el.name);
+        }
+      });
+    });
+
+    // return value;
   }
 
   logOut(): void {

@@ -8,6 +8,7 @@ import { ProfileComponent } from 'src/app/main/components/profile/profile.compon
 import { Router } from '@angular/router';
 import { MatDialogComponent } from '../mat-dialog/mat-dialog.component';
 import { BoardAddDialogComponent } from '../board-add-dialog/board-add-dialog.component';
+import { UsersService } from 'src/app/shared/services/users.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,6 +23,7 @@ export class HeaderComponent {
   });
   constructor(
     private auth: AuthService,
+    public userService: UsersService,
 
     public translate: TranslateService,
     public prof: MatDialog,
@@ -33,6 +35,9 @@ export class HeaderComponent {
     this.translate.currentLang = localStorage.getItem('lang') || 'en';
   }
 
+  goToMain(): void {
+    this.router.navigate(['main']);
+  }
   openProfileUser(): void {
     this.prof.open(ProfileComponent);
   }

@@ -1,0 +1,29 @@
+@import "../../../../assets/utils.scss";
+
+:host {
+  display: block;
+  flex: none;
+  width: 100%;
+  height: 120px;
+  border: 1px solid $light;
+  border-radius: 8px;
+
+  .task {
+    &__header {
+      height: 20px;
+    }
+
+    &__description {
+      margin: 10px;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.task-header {
+  display: block;
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

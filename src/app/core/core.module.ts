@@ -16,6 +16,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component';
 import { BoardAddDialogComponent } from './components/board-add-dialog/board-add-dialog.component';
 import { BoardAddFormComponent } from './components/board-add-form/board-add-form.component';
+import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { BoardAddFormComponent } from './components/board-add-form/board-add-for
     WelcomeComponent,
 
     MatDialogComponent,
-     BoardAddDialogComponent,
-     BoardAddFormComponent,
+    BoardAddDialogComponent,
+    BoardAddFormComponent,
+    CustomSnackbarComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { BoardAddFormComponent } from './components/board-add-form/board-add-for
     FormsModule,
     ReactiveFormsModule,
   ],
+
   providers: [
     HttpService,
     {
@@ -50,6 +53,6 @@ import { BoardAddFormComponent } from './components/board-add-form/board-add-for
       multi: true,
     },
   ],
-  exports: [HeaderComponent, MaterialModule],
+  exports: [HeaderComponent, MaterialModule, TranslateModule],
 })
 export class CoreModule {}

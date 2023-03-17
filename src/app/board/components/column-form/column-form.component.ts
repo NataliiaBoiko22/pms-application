@@ -1,6 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { HttpService } from 'src/app/core/services/http.service';
 import { BoardService } from '../../services/board.service';
+import { map, switchMap } from 'rxjs';
+import { Column } from 'src/app/core/types/column.types';
+import { Observable } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -14,7 +18,8 @@ import {
 })
 export class ColumnFormComponent {
   @Input() boardId!: string;
-
+  @Output() public modalClose: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
   columnForm: FormGroup = this.formBuilder.group({
     title: ['', [Validators.required]],
   });
@@ -24,14 +29,18 @@ export class ColumnFormComponent {
     private httpService: HttpService,
     private boardService: BoardService
   ) {}
-
+  public closeModal(): void {
+    this.modalClose.emit(true);
+  }
   createColumn(): void {
+    console.log(this.boardId);
     this.httpService
       .createColumn(this.boardId, {
         ...this.columnForm.value,
-        order: this.boardService.getColumnLastOrder(),
+        order: this.boardService.getMaxOrderCol(),
       })
       .subscribe((col) => {
+        console.log(col);
         if ('_id' in col) {
           this.boardService.addColumn(col);
         }

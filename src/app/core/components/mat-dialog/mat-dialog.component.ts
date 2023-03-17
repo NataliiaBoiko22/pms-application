@@ -13,7 +13,6 @@ export class MatDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     public dialogRef: MatDialogRef<MatDialogComponent>
   ) {}
-
   close(confirm: PopUpProperties): void {
     this.dialogRef.close(confirm);
   }

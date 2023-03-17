@@ -107,28 +107,8 @@ ul {
   justify-content: space-between;
 }
 
-@media (max-width: 500px) {
-  .welcome-container {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .container-information {
-    max-width: 100%;
-  }
-
-  .description-title {
-    margin-bottom: 10px;
-    font-size: 1.3em;
-  }
-
-  .description-subtitle {
-    margin-bottom: 10px;
-    font-size: 0.8em;
-  }
-}
-
-@media (max-width: 380px) {
+@media (max-width: 320px) {
   .buttons-wrapper {
     width: 88%;
     font-size: 10px;

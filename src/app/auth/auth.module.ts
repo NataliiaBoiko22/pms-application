@@ -9,7 +9,8 @@ import { SinginComponent } from './components/singin/singin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from '../core/services/http.service';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { SharedModule } from '../shared/shared.module';
+import { MainRoutingModule } from '../main/main-routing.module';
 @NgModule({
   declarations: [SingupComponent, SinginComponent, AuthPageComponent],
   imports: [
@@ -20,6 +21,8 @@ import { TranslateModule } from '@ngx-translate/core';
     AuthRoutingModule,
     HttpClientModule,
     TranslateModule,
+    SharedModule,
+    MainRoutingModule,
   ],
   providers: [HttpService],
 })

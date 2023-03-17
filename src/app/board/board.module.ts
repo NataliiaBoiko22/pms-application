@@ -8,20 +8,34 @@ import { ColumnFormComponent } from './components/column-form/column-form.compon
 import { ColumnComponent } from './components/column/column.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TaskDialogComponent } from './components/task-dialog/task-dialog.component';
+import { TaskFormComponent } from './components/task-form/task-form.component';
+import { TaskComponent } from './components/task/task.component';
+import { TaskUpdateComponent } from './components/task-update/task-update.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../shared/shared.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     PageComponent,
     ColumnDialogComponent,
     ColumnFormComponent,
     ColumnComponent,
+    TaskDialogComponent,
+    TaskFormComponent,
+    TaskComponent,
+    TaskUpdateComponent,
   ],
   imports: [
     CommonModule,
     BoardRoutingModule,
     MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
+
     HttpClientModule,
+    TranslateModule,
+    SharedModule,
+    DragDropModule,
   ],
 })
 export class BoardModule {}

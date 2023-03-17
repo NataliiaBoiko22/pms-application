@@ -6,20 +6,31 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from '../material/material';
 import { BoardBoxComponent } from './components/board-box/board-box.component';
-import { BoardPageComponent } from './components/board-page/board-page.component';
 import { LottieModule } from 'ngx-lottie';
-
+import { FilterComponent } from './components/filter/filter.component';
+import { BoardsPageComponent } from './boards-page/boards-page.component';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
-  declarations: [ProfileComponent, BoardBoxComponent, BoardPageComponent],
+  declarations: [
+    ProfileComponent,
+    BoardBoxComponent,
+    FilterComponent,
+    BoardsPageComponent,
+    TaskItemComponent,
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,
     MaterialModule,
     TranslateModule,
     FormsModule,
-
+    HttpClientModule,
     ReactiveFormsModule,
     LottieModule,
+    SharedModule,
   ],
+  exports: [TranslateModule, FormsModule, ReactiveFormsModule],
 })
 export class MainModule {}

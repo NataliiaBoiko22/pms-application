@@ -2,7 +2,7 @@
   "welcome": {
     "welcomeTitle": "Управління проектами",
     "welcomeDescription": "Додаток для управління проектами допоможе ефективно вирішувати робочі завдання. Додаток — це цифрова дошка, яка надає візуальне зображення роботи, яку вам потрібно виконати. Ви можете переміщувати та визначати пріоритети завдань на дошці проекту, коли проект розвивається та змінюється. Дошка проектів дозволяє вам легко бачити загальну картину, щоб ви могли ефективно розставляти пріоритети завдань. Це також ефективний і дієвий спосіб керувати роботою вашої команди та тримати всіх на одній сторінці.",
-    "startplanningbutton": "Давайте почнемо!",
+    "startbutton": "Давайте почнемо!",
     "welcomeBenefits": "Переваги",
     "benefitsDescriptionOne": "Отримати повний огляд прогресу проекту",
     "benefitsDescriptionTwo": "Точно знати, на якому етапі перебуває будь-який проект",
@@ -15,10 +15,11 @@
     "oppotunitiesDescriptionFour": "Оцінка термінів, планування, контроль та відстежування завдання"
   },
   "header": {
+    "goToMain": "Головна",
     "settingsTitle": "Настройки",
-    "addBoard": "Создать доску",
+    "addBoard": "+ Дошкa",
     "translation": "Мова",
-    "logInSignUp": "Ввійти / зареєструватися",
+    "logIn": "Ввійти",
     "logOut": "Вийти"
   },
   "authorization": {
@@ -83,10 +84,11 @@
     "boardsFormTitle": "Створити дошку",
     "boardName": "Назва",
     "boardSelectUser": "Користувачі",
-    "createBoardButton": "Створити дошку",
+    "createBoardButton": "Створити ",
     "enterBoardTitlePlaceholder": "Введіть назву дошки",
     "filters": "Фильтр",
     "title": "Заголовок",
+    "search": "Обери дошку ",
     "boardOwner": "Власник",
     "none": "Без вибору",
     "searchCriteria": "Критерії пошуку",
@@ -95,8 +97,18 @@
     "board": "Дошка",
     "taskOwner": "Власник завдання",
     "tasks": "Завдання",
-    "keywordsPlaceholder": "Введіть запит",
-    "messagePart1": "Дошка",
-    "messagePart2": "Створено"
+    "keywordsPlaceholder": "Введіть запит"
+  },
+  "boardPage": {
+    "createColumn": "Створити колонку",
+    "create": "Створити",
+    "createTask": "Створити задачу",
+    "columnTitle": "Назва колонки",
+    "enterColumnTitlePlaceholder": "Введіть назву колонки",
+    "taskTitle": "Назва задачі",
+    "enterTaskTitlePlaceholder": "Введіть назву задачі",
+    "taskDescription": "Опис задачі",
+    "enterTaskDescriptionPlaceholder": "Введіть опис задачі",
+    "cancel": "Відміна"
   }
 }

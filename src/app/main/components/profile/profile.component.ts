@@ -36,14 +36,14 @@ export class ProfileComponent {
 
   constructor(
     private profileService: ProfileService,
-    private apiService: HttpService,
+    private httpService: HttpService,
     public dialog: MatDialog
   ) {}
 
   async ngOnInit() {
     const userId = localStorage.getItem('userId') as string;
 
-    this.apiService.getUser(userId).subscribe((value) => {
+    this.httpService.getUser(userId).subscribe((value) => {
       if ('_id' in value) {
         this.controlName.setValue(value.name);
         this.controlLogin.setValue(value.login);

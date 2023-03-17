@@ -6,7 +6,7 @@ import { User } from 'src/app/core/types/users.types';
 })
 export class UsersService {
   users$: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
-
+  // owners$: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
   getName(id: string): string {
     return (
       this.users$.getValue().find((user) => user._id === id)?.name ||

@@ -16,10 +16,12 @@ export class AppComponent {
     public translate: TranslateService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.title = 'pms-application';
     this.loaderService.isLoading.subscribe((isLoad) => {
-      this.isLoading = isLoad;
       this.cdref.detectChanges();
+
+      return (this.isLoading = isLoad);
     });
     const lang = localStorage.getItem('lang') || 'en';
     this.translate.setDefaultLang(lang);
