@@ -17,6 +17,8 @@ import { MatDialogComponent } from './components/mat-dialog/mat-dialog.component
 import { BoardAddDialogComponent } from './components/board-add-dialog/board-add-dialog.component';
 import { BoardAddFormComponent } from './components/board-add-form/board-add-form.component';
 import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
+import { DescrDialogComponent } from './components/descr-dialog/descr-dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { CustomSnackbarComponent } from './components/custom-snackbar/custom-sna
     BoardAddDialogComponent,
     BoardAddFormComponent,
     CustomSnackbarComponent,
+    DescrDialogComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +57,6 @@ import { CustomSnackbarComponent } from './components/custom-snackbar/custom-sna
       multi: true,
     },
   ],
-  exports: [HeaderComponent, MaterialModule, TranslateModule],
+  exports: [HeaderComponent, MaterialModule, TranslateModule, FooterComponent],
 })
 export class CoreModule {}

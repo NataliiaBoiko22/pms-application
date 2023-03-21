@@ -10,6 +10,8 @@ import { MatDialogConfig } from '@angular/material/dialog';
 import { _DisposeViewRepeaterStrategy } from '@angular/cdk/collections';
 import { MatDialogComponent } from 'src/app/core/components/mat-dialog/mat-dialog.component';
 import { ColumnComponent } from '../column/column.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DescrDialogComponent } from 'src/app/core/components/descr-dialog/descr-dialog.component';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -29,7 +31,8 @@ export class TaskComponent {
     private httpService: HttpService,
     private boardService: BoardService,
     public dialog: MatDialog,
-    public columnComponent: ColumnComponent
+    public columnComponent: ColumnComponent,
+    private _snackBar: MatSnackBar
   ) {}
 
   deleteTask() {
@@ -94,6 +97,11 @@ export class TaskComponent {
             },
           });
       }
+    });
+  }
+  openDescription(): void {
+    this.dialog.open(DescrDialogComponent, {
+      data: this.taskData.description,
     });
   }
 }

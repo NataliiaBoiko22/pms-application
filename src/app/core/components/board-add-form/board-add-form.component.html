@@ -4,13 +4,14 @@
 
 <form [formGroup]="boardForm" class="boards-form">
   <mat-form-field appearance="outline">
-    <mat-label>{{ "mainPage.boardName" | translate }}</mat-label>
+    <mat-label>{{ "mainPage.boardTitle" | translate }}</mat-label>
     <input
       matInput
       placeholder="{{ 'mainPage.enterBoardTitlePlaceholder' | translate }}"
       autocomplete="off"
       name="title"
       formControlName="title"
+      maxlength="35"
     />
 
     <mat-error *ngIf="boardForm.get('title')?.errors?.['required']">

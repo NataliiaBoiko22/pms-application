@@ -7,6 +7,8 @@ import {
   SignInBody,
   SignUpBody,
 } from 'src/app/core/types/auth.types';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomSnackbarComponent } from 'src/app/core/components/custom-snackbar/custom-snackbar.component';
 import { switchMap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -17,12 +19,28 @@ export class AuthService {
 
   isSingIn$ = new BehaviorSubject(this.isSingInFromStorage);
 
-  constructor(private httpResponse: HttpService, private router: Router) {}
+  constructor(
+    private httpResponse: HttpService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {}
 
   signUp(data: SignUpBody): void {
     this.httpResponse.signUp(data).subscribe((resp) => {
       if (typeof resp === 'object' && '_id' in resp) {
         localStorage.setItem('userId', resp._id);
+        this._snackBar.openFromComponent(CustomSnackbarComponent, {
+          data: {
+            message:
+              localStorage.getItem('lang') === 'ukr'
+                ? `Вітаємо, '${resp.name}'! Акаунт створено!`
+                : `Hello, '${resp.name}'! Account has been created`,
+            snackBar: this._snackBar,
+          },
+          panelClass: ['snackbar-container'],
+
+          duration: 3500,
+        });
       }
 
       if (typeof resp === 'object' && '_id' in resp) {
@@ -67,6 +85,18 @@ export class AuthService {
         if (el.login === login) {
           localStorage.setItem('userId', el._id);
           localStorage.setItem('userName', el.name);
+          this._snackBar.openFromComponent(CustomSnackbarComponent, {
+            data: {
+              message:
+                localStorage.getItem('lang') === 'ukr'
+                  ? `Вітаємо, '${el.name}'!`
+                  : `Hello, '${el.name}'!`,
+              snackBar: this._snackBar,
+            },
+            panelClass: ['snackbar-container'],
+
+            duration: 3500,
+          });
         }
       });
     });

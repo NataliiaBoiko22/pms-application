@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Board } from '../../types/board.types';
-import { map, Observable, switchMap } from 'rxjs';
+
 import { Router } from '@angular/router';
 import { CustomSnackbarComponent } from '../custom-snackbar/custom-snackbar.component';
 import { EventEmitter } from '@angular/core';
@@ -63,25 +63,12 @@ export class BoardAddFormComponent implements OnInit {
     };
     this.httpService.createBoard(board).subscribe((res) => {
       if ((res as Board)._id) {
-        // this.snackBar.open(
-        //   `${res.translate.part1} '${this.boardForm.get('title')?.value}' ${
-        //     res.translate.part2
-        //   }`,
-        //   'OK',
-        // {
-        //   duration: 2500,
-        //   horizontalPosition: 'center',
-        //   verticalPosition: 'top',
-        // }
-        // );
         this._snackBar.openFromComponent(CustomSnackbarComponent, {
           data: {
             message:
               localStorage.getItem('lang') === 'ukr'
                 ? `Дошка '${this.boardForm.get('title')?.value}' створена!`
-                : `The board '${
-                    this.boardForm.get('title')?.value
-                  }' has been created!`,
+                : `The board '${this.boardForm.get('title')?.value}' created!`,
             snackBar: this._snackBar,
           },
           panelClass: ['snackbar-container'],
@@ -97,15 +84,4 @@ export class BoardAddFormComponent implements OnInit {
   getListUser() {
     return this.usersService.getName(this.boardForm.get('users')?.value?.[0]);
   }
-
-  // private getMessage(): Observable<Translate> {
-  //   return this.translate.getTranslation(this.translate.currentLang).pipe(
-  //     map((translateObj) => {
-  //       return {
-  //         part1: translateObj.mainPage.messagePart1,
-  //         part2: translateObj.mainPage.messagePart2,
-  //       };
-  //     })
-  //   );
-  // }
 }

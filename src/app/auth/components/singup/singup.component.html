@@ -1,6 +1,6 @@
-<div class="container">
+<div class="singin">
   <form [formGroup]="authForm">
-    <h2>{{ "registration.signUp" | translate }}</h2>
+    <h2 class="singin__title">{{ "registration.signUp" | translate }}</h2>
     <mat-form-field>
       <mat-label for="inputName1">{{
         "registration.name" | translate
@@ -11,7 +11,6 @@
           matInput
           formControlName="name"
           type="text"
-          class="form-control"
           id="inputName1"
           [formControl]="controlName"
           autocomplete="new-password"
@@ -68,7 +67,6 @@
           matInput
           formControlName="password"
           type="password"
-          class="form-control"
           id="inputPassword3"
           [formControl]="controlPassword"
           autocomplete="new-password"
@@ -89,7 +87,7 @@
         {{ "errors.usedSpecial" | translate }}
       </mat-error>
     </div>
-    <div class="button">
+    <div class="singin__button">
       <button
         mat-raised-button
         color="primary"
@@ -101,6 +99,11 @@
       </button>
     </div>
     <tr></tr>
-    <a routerLink="/singin">{{ "registration.haveAccount" | translate }}</a>
+    <span class="singin__question">{{
+      "registration.haveAccount" | translate
+    }}</span>
+    <a class="singin__link" routerLink="/singin">{{
+      "registration.haveAccountLogIn" | translate
+    }}</a>
   </form>
 </div>

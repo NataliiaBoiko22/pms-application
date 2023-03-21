@@ -1,21 +1,23 @@
 @import "../../../../assets/utils.scss";
 
-.header-wrapper {
-  padding: 25px 35px;
-  background: $light-blue;
-}
+.header {
+  &__wrapper {
+    padding: 25px 35px;
+    background: $light-blue;
+  }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.header-logo {
-  font-weight: 700;
-  font-size: 36px;
-  font-style: oblique;
-  -webkit-text-stroke: 0.001em $white;
+  &__logo {
+    font-weight: 700;
+    font-size: 36px;
+    font-style: oblique;
+    -webkit-text-stroke: 0.001em $white;
+  }
 }
 button[disabled="true"] {
   display: none;

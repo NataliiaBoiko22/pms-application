@@ -1,7 +1,8 @@
 @use "../../../assets/styles/layout" as layout;
 @use "../../../assets/styles/animations" as animations;
-@use "../../../assets/utils.scss" as vars;
 @use "sass:color";
+
+@import "../../../assets/utils.scss";
 
 :host {
   display: flex;
@@ -29,7 +30,7 @@
       padding: 15px;
       overflow-x: auto;
       column-gap: 15px;
-      background-color: color.scale(vars.$light-blue, $alpha: -50%);
+      background-color: color.scale($light-blue, $alpha: -50%);
     }
 
     &__button-create {
@@ -37,7 +38,7 @@
       min-width: 250px;
       height: 90px;
       filter: opacity(0.3);
-      border: 2.5px dashed vars.$light-grey;
+      border: 2.5px dashed $light-grey;
       border-radius: 8px;
       transition: filter 0.2s ease-out;
 

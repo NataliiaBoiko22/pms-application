@@ -26,12 +26,14 @@
     "logIn": "Log In",
     "login": "Login",
     "password": "Password",
-    "dontHaveAccount": "Don't have an account yet? Sing Up!"
+    "dontHaveAccount": "Don't have an account?",
+    "dontHaveAccountSingUp": "Sing Up!"
   },
   "registration": {
     "name": "Name",
     "signUp": "Sign Up",
-    "haveAccount": "Already have an account? Log In!"
+    "haveAccount": "Do you already have an account?",
+    "haveAccountLogIn": "Log In!"
   },
   "errors": {
     "enterLoginEmail": "*please enter a login email",
@@ -77,13 +79,10 @@
     "cancel": "Cancel",
     "confirm": "Confirm"
   },
-  "modalWindowYes": "Yes",
-  "modalWindowNo": "No",
-  "modalWindowOk": "Ok",
   "mainPage": {
     "mainPageTitle": "Boards",
     "boardsFormTitle": "Create board",
-    "boardName": "Name",
+    "boardTitle": "Title",
     "boardSelectUser": "User",
     "createBoardButton": "Create",
     "enterBoardTitlePlaceholder": "Enter the board title",
@@ -111,5 +110,9 @@
     "taskDescription": "Task description",
     "enterTaskDescriptionPlaceholder": "Enter task description",
     "cancel": "Cancel"
+  },
+  "footer": {
+    "creator": "Creator",
+    "author": "Nataliia Boiko"
   }
 }

@@ -20,4 +20,14 @@
     margin-left: 10px;
     color: $white;
   }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  button {
+    color: $white;
+    padding: 8px;
+    border: 1px solid $white;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
 }

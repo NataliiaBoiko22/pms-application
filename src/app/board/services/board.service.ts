@@ -12,7 +12,9 @@ import {
 })
 export class BoardService {
   columns: BehaviorSubject<Column[]> = new BehaviorSubject<Column[]>([]);
+
   tasks: TaskSubject = {};
+
   constructor() {}
 
   addColumn(col: Column): void {
@@ -96,6 +98,7 @@ export class BoardService {
     this.tasks[colId].getValue()[position].columnId = colId;
   }
   getNewTaskOrder(colId: string): TaskUpdateBody[] {
+    console.log(this.tasks[colId]);
     return this.tasks[colId].getValue().map((task, ind) => {
       return {
         _id: task._id,

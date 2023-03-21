@@ -1,6 +1,6 @@
-<div class="container">
+<div class="login">
   <form [formGroup]="authForm">
-    <h2>{{ "authorization.logIn" | translate }}</h2>
+    <h2 class="login__title">{{ "authorization.logIn" | translate }}</h2>
     <mat-form-field>
       <mat-label for="inputText2">{{
         "authorization.login" | translate
@@ -11,7 +11,6 @@
           matInput
           type="text"
           formControlName="login"
-          class="form-control"
           id="inputText2"
           [formControl]="controlLogin"
           autocomplete="new-password"
@@ -36,7 +35,6 @@
           matInput
           formControlName="password"
           type="password"
-          class="form-control"
           id="inputPassword3"
           [formControl]="controlPassword"
           autocomplete="new-password"
@@ -54,10 +52,9 @@
         {{ "errors.usedSpecial" | translate }}
       </mat-error>
     </div>
-    <div class="button">
+    <div class="login__button">
       <button
         mat-raised-button
-        color="primary"
         [disabled]="authForm.invalid"
         (click)="onSingInButton()"
         type="submit"
@@ -67,8 +64,11 @@
     </div>
 
     <tr></tr>
-    <a routerLink="/singin/singup">{{
+    <span class="login__question">{{
       "authorization.dontHaveAccount" | translate
+    }}</span>
+    <a class="login__link" routerLink="/singin/singup">{{
+      "authorization.dontHaveAccountSingUp" | translate
     }}</a>
   </form>
 </div>

@@ -26,12 +26,14 @@
     "logIn": "Ввійти",
     "login": "Логін",
     "password": "Пароль",
-    "dontHaveAccount": "Ще немає акаунта? Тоді зареєструйтеся!"
+    "dontHaveAccount": "Ще немає акаунта?",
+    "dontHaveAccountSingUp": "Зареєструйтеся!"
   },
   "registration": {
     "name": "Им'я",
     "signUp": "Зареєструватися",
-    "haveAccount": "Вже є акаунт? Тоді ввійдіть!"
+    "haveAccount": "Вже є акаунт?",
+    "haveAccountLogIn": "Bвійдіть!"
   },
   "errors": {
     "enterLoginEmail": "*введіть адресу електронної пошти для входа в систему",
@@ -76,13 +78,10 @@
     "cancel": "Відмінити",
     "confirm": "Підтвердити"
   },
-  "modalWindowYes": "Так",
-  "modalWindowNo": "Ні",
-  "modalWindowOk": "Ок",
   "mainPage": {
     "mainPageTitle": "Дошки",
     "boardsFormTitle": "Створити дошку",
-    "boardName": "Назва",
+    "boardTitle": "Назва",
     "boardSelectUser": "Користувачі",
     "createBoardButton": "Створити ",
     "enterBoardTitlePlaceholder": "Введіть назву дошки",
@@ -110,5 +109,9 @@
     "taskDescription": "Опис задачі",
     "enterTaskDescriptionPlaceholder": "Введіть опис задачі",
     "cancel": "Відміна"
+  },
+  "footer": {
+    "creator": "Розробник",
+    "author": "Наталія Бойко"
   }
 }
