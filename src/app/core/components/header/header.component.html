@@ -2,9 +2,14 @@
   <div class="header__wrapper">
     <div class="header__container">
       <div class="header__logo">
-        <a><img src="../../../../assets/logo.svg" alt="Logo" /> PM</a>
+        <img
+          src="../../../../assets/logo.svg"
+          alt="Logo"
+          class="header__logo-svg"
+        />
+        PM
       </div>
-      <div>
+      <div class="header__buttons-center">
         <button
           type="button"
           title="{{ 'header.goToMain' }}"
@@ -23,7 +28,7 @@
           {{ "header.addBoard" | translate }}
         </button>
       </div>
-      <div>
+      <div class="header__buttons-right">
         <button
           [disabled]="!isSingIn"
           mat-raised-button

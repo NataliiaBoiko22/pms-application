@@ -33,14 +33,12 @@ export class ColumnFormComponent {
     this.modalClose.emit(true);
   }
   createColumn(): void {
-    console.log(this.boardId);
     this.httpService
       .createColumn(this.boardId, {
         ...this.columnForm.value,
         order: this.boardService.getMaxOrderCol(),
       })
       .subscribe((col) => {
-        console.log(col);
         if ('_id' in col) {
           this.boardService.addColumn(col);
         }

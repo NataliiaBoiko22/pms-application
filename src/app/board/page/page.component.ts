@@ -64,7 +64,6 @@ export class PageComponent {
   }
 
   openDialogColumn(): void {
-    console.log(this.boardId);
     this.dialog.open(ColumnDialogComponent, {
       data: {
         boardId: this.boardId,

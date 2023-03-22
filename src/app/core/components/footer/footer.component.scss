@@ -66,13 +66,59 @@
   text-align: center;
 }
 
-@media (max-width: 500px) {
-  .footer-author {
-    flex-direction: column;
-    font-size: 10px;
+@media (min-width: 320px) {
+  .footer {
+    &__wrapper {
+      font-weight: 500;
+    }
+
+    &__author {
+      flex-direction: column;
+
+      width: 60%;
+    }
+
+    &__github-logo {
+      width: 28px;
+    }
+
+    .footer__author-git {
+      width: 20px;
+    }
+    &__year {
+      font-weight: 400;
+      font-size: 12px;
+    }
   }
 
-  .footer-author-link {
-    margin-bottom: 10px;
+  .rs-logo {
+    width: 30px;
+  }
+}
+@media (min-width: 640px) {
+  .footer {
+    &__wrapper {
+      font-weight: 700;
+    }
+
+    &__author {
+      flex-direction: row;
+    }
+
+    &__github-logo {
+      width: 30px;
+    }
+
+    .footer__author-git {
+      width: 30px;
+    }
+    &__year {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  .rs-logo {
+    width: 60px;
   }
 }

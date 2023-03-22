@@ -1,15 +1,12 @@
 @use "../../../../assets/styles/layout" as layout;
 @import "../../../../assets/utils.scss";
 :host {
-
-  @include layout.align-center;
-
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   padding: 10px;
   width: 300px;
-
+  overflow: hidden;
   .boards-form {
     display: flex;
     flex-direction: column;
@@ -29,5 +26,23 @@
     &__button-close {
       background-color: $light-blue;
     }
+  }
+}
+@media (min-width: 320px) {
+  :host {
+    max-width: 220px;
+    overflow: hidden;
+  }
+  .boards-form {
+    max-width: 220px;
+  }
+}
+@media (min-width: 640px) {
+  :host {
+    max-width: 300px;
+    overflow: hidden;
+  }
+  .boards-form {
+    max-width: 300px;
   }
 }
