@@ -33,7 +33,6 @@ export class PageComponent {
       .pipe(map((params) => params['id']))
       .subscribe((id) => {
         this.boardId = id;
-        console.log(id);
       });
     this.boardService.columns.subscribe((cols) => {
       this.columns = cols;

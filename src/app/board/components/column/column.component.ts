@@ -1,20 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Column } from 'src/app/core/types/column.types';
-import {
-  ChangeDetectorRef,
-  ElementRef,
-  Input,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 import { BoardService } from '../../services/board.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -55,7 +48,6 @@ export class ColumnComponent implements OnInit {
     private httpService: HttpService,
     private boardService: BoardService,
 
-    private renderer: Renderer2,
     public dialog: MatDialog
   ) {}
 
@@ -78,7 +70,6 @@ export class ColumnComponent implements OnInit {
         .getAllTasks(this.boardId, this.columnData._id)
         .subscribe((tasks) => {
           if (Array.isArray(tasks)) {
-            console.log(this.boardService.tasks[this.columnData._id] || null);
             this.boardService.tasks[this.columnData._id].next(
               tasks.sort((a, b) => a.order - b.order)
             );

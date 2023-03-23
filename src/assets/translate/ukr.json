@@ -16,7 +16,7 @@
   },
   "header": {
     "goToMain": "Головна",
-    "settingsTitle": "Настройки",
+    "settingsTitle": "Налфштування",
     "addBoard": "+ Дошкa",
     "translation": "Мова",
     "logIn": "Ввійти",
@@ -86,17 +86,12 @@
     "createBoardButton": "Створити ",
     "enterBoardTitlePlaceholder": "Введіть назву дошки",
     "filters": "Фильтр",
-    "title": "Заголовок",
-    "search": "Обери дошку ",
+    "title": "Назва",
     "boardOwner": "Власник",
     "none": "Без вибору",
-    "searchCriteria": "Критерії пошуку",
-    "searchRequest": "Пошуковий запит",
-    "searchHint": "Частина заголовку",
     "board": "Дошка",
     "taskOwner": "Власник завдання",
-    "tasks": "Завдання",
-    "keywordsPlaceholder": "Введіть запит"
+    "tasks": "Завдання"
   },
   "boardPage": {
     "createColumn": "Створити колонку",

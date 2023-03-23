@@ -38,7 +38,6 @@ export class TaskFormComponent {
         users: [],
       })
       .subscribe((task) => {
-        console.log('Hoora');
         if ('_id' in task) {
           this.boardService.addTask(task, this.columnId);
         }

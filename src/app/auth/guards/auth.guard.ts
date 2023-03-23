@@ -46,24 +46,4 @@ export class AuthGuard implements CanActivate, CanLoad {
     return true;
   }
 
-  ///////////////////////////////////////////////////////////
-  // constructor(private router: Router) {}
-
-  // canActivate(): boolean {
-  //   if (localStorage.getItem('token')) {
-  //     // this.router.navigate(['welcome']);
-  //     this.router.navigate(['main']);
-
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  // canLoad(): boolean {
-  //   if (!localStorage.getItem('token')) {
-  //     this.router.navigate(['welcome']);
-  //     return false;
-  //   }
-  //   return true;
-  // }
 }

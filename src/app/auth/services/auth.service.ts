@@ -9,16 +9,13 @@ import {
 } from 'src/app/core/types/auth.types';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomSnackbarComponent } from 'src/app/core/components/custom-snackbar/custom-snackbar.component';
-import { switchMap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   public token = '';
   isSingInFromStorage = !!localStorage.getItem('token');
-
   isSingIn$ = new BehaviorSubject(this.isSingInFromStorage);
-
   constructor(
     private httpResponse: HttpService,
     private router: Router,
@@ -59,11 +56,9 @@ export class AuthService {
       }
     });
   }
-  //////////////////////bylo//////////
 
   singIn(data: SignInBody): void {
     this.httpResponse.singIn(data).subscribe((respSingIn) => {
-      console.log(respSingIn);
       if (typeof respSingIn === 'object' && 'token' in respSingIn) {
         this.setSingInConfigs(respSingIn);
       } else {
@@ -100,8 +95,6 @@ export class AuthService {
         }
       });
     });
-
-    // return value;
   }
 
   logOut(): void {

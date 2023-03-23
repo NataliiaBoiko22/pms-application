@@ -1,16 +1,8 @@
 import { Component, Input, Output } from '@angular/core';
 import { HttpService } from 'src/app/core/services/http.service';
 import { BoardService } from '../../services/board.service';
-import { map, switchMap } from 'rxjs';
-import { Column } from 'src/app/core/types/column.types';
-import { Observable } from 'rxjs';
 import { EventEmitter } from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-column-form',
   templateUrl: './column-form.component.html',

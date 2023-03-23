@@ -1,5 +1,4 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Task } from 'src/app/core/types/tasks.types';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/core/services/http.service';

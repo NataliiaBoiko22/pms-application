@@ -7,16 +7,10 @@
   border: 2px solid $white;
   border-radius: 8px;
   height: 100px;
-  width: 300px;
-  font-size: 16px;
   &__button {
     color: $white;
-    font-size: 18px;
   }
   .mat-icon {
-    font-size: 18px;
-    height: 18px;
-    width: 18px;
     margin-right: 10px;
     margin-left: 10px;
     color: $white;
@@ -32,3 +26,31 @@
     margin-right: 5px;
   }
 }
+@media (min-width: 320px) {
+  .custom-snackbar {
+    width: 240px;
+    font-size: 14px;
+    &__button {
+      font-size: 14px;
+    }
+    .mat-icon {
+      font-size: 14px;
+      height: 14px;
+      width: 14px;
+    }
+  }
+}
+@media (min-width: 640px) {
+  .custom-snackbar {
+    width: 300px;
+    font-size: 16px;
+    &__button {
+      font-size: 18px;
+    }
+    .mat-icon {
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+} ;

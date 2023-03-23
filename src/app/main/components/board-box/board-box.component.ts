@@ -21,7 +21,6 @@ export class BoardBoxComponent {
   ) {}
 
   navigate(): void {
-    console.log(this.boardData._id);
     this.router.navigate(['board', this.boardData._id]);
   }
   openDialog($event: Event) {

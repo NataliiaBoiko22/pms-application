@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { patterns } from 'src/app/auth/components/singup/singup.constants';
 import { ProfileService } from '../../services/profile.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SignUpBody } from 'src/app/core/types/auth.types';
@@ -12,19 +11,26 @@ import { MatDialogComponent } from 'src/app/core/components/mat-dialog/mat-dialo
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
+  patterns = {
+    MIN_LENGTH: 4,
+    MAX_LENGTH: 20,
+    PATTERN_NAME: /^[a-z0-9]+$/,
+    PATTERN_PASSWORD:
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+  };
   userUpdateForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
-      Validators.minLength(patterns.MIN_LENGTH),
-      Validators.maxLength(patterns.MAX_LENGTH),
-      Validators.pattern(patterns.PATTERN_NAME),
+      Validators.minLength(this.patterns.MIN_LENGTH),
+      Validators.maxLength(this.patterns.MAX_LENGTH),
+      Validators.pattern(this.patterns.PATTERN_NAME),
     ]),
     login: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(patterns.MIN_LENGTH),
-      Validators.maxLength(patterns.MAX_LENGTH),
-      Validators.pattern(patterns.PATTERN_PASSWORD),
+      Validators.minLength(this.patterns.MIN_LENGTH),
+      Validators.maxLength(this.patterns.MAX_LENGTH),
+      Validators.pattern(this.patterns.PATTERN_PASSWORD),
     ]),
   });
 

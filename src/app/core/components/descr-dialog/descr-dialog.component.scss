@@ -7,14 +7,12 @@
   border: 2px solid $white;
   border-radius: 8px;
 
-  width: 300px;
   height: auto;
   margin: 8px;
   &__text {
     display: block;
 
     height: auto;
-    max-height: 550px;
     overflow-y: auto;
     width: inherit;
     overflow-x: hidden;
@@ -23,5 +21,24 @@
   }
   &__button {
     background-color: $light-blue;
+  }
+}
+@media (min-width: 320px) {
+  .description {
+    width: 240px;
+    &__text {
+      max-height: 450px;
+      overflow-y: auto;
+      width: inherit;
+      overflow-x: hidden;
+    }
+  }
+}
+@media (min-width: 640px) {
+  .description {
+    width: 300px;
+    &__text {
+      max-height: 550px;
+    }
   }
 }

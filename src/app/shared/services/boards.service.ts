@@ -8,15 +8,10 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class BoardsService {
   boards$: BehaviorSubject<Board[]> = new BehaviorSubject<Board[]>([]);
-
   boardsOnView$: BehaviorSubject<Board[]> = new BehaviorSubject<Board[]>([]);
-
   titleFilter: string = '';
   title: string = '';
   owner: string = '';
-
-  randomArr: number[] = [];
-
   users: string[] = [];
 
   constructor(
@@ -25,9 +20,7 @@ export class BoardsService {
   ) {}
 
   addBoard(board: Board): void {
-    console.log(this.boards$);
     const boards = this.boards$.getValue();
-    console.log(boards);
     boards.push(board);
     this.boards$.next(boards);
     this.getFilterResults();
@@ -53,7 +46,6 @@ export class BoardsService {
   }
 
   getFilterResults(): void {
-    console.log(this.boards$.getValue());
     this.boardsOnView$.next(this.filterResults(this.boards$.getValue()));
   }
 
@@ -63,7 +55,6 @@ export class BoardsService {
       .filter((board) => this.isIncludedUser(board));
   }
   getFilterResultsTitle(): void {
-    console.log(this.boards$.getValue());
     this.boardsOnView$.next(this.filterResultsTitle(this.boards$.getValue()));
   }
   private filterResultsTitle(boards: Board[]): Board[] {
