@@ -12,8 +12,16 @@
     "oppotunitiesDescriptionOne": "Create boards",
     "oppotunitiesDescriptionTwo": "Create tasks, check done, transfer tasks",
     "oppotunitiesDescriptionThree": "Search by tasks boards or performers",
-    "oppotunitiesDescriptionFour": "Estimate timelines, plan, monitor and track tasks"
-  },
+    "oppotunitiesDescriptionFour": "Estimate timelines, plan, monitor and track tasks",
+    "course": "ABOUT COURSE",
+    "courseInfo": "This tutorial project was developed as part of the free online course \"Javascript/Front-end Mentoring Program (in English)\" from The Rolling Scopes community. The RS School is working by the principle of \"Pay it forward.\" Everyone can study at RS School, regardless of age, professional employment, or place of residence." ,
+    
+      "developerTitle": "ABOUT DEVELOPER",
+      "devName": "Nataliia",
+      "devDescription": "Hello! I started my coding journey in august 2022 and fell in love with coding. Before that I was far from coding, but I am aimed at switching my career. I specialised in Frontend Development as I'm passionate to combine design and technical knowledge.",
+      "devContact": "Contact Me"
+
+    },
   "header": {
     "goToMain": "Main",
     "settingsTitle": "Settings",

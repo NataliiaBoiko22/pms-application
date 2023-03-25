@@ -15,6 +15,7 @@ export interface TaskByIdBody extends TaskBody {
 export interface Task extends TaskByIdBody {
   _id: string;
   boardId: string;
+  taskPriority: boolean;
 }
 
 export interface TaskUpdateBody {

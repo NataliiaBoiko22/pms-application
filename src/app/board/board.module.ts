@@ -15,7 +15,6 @@ import { TaskUpdateComponent } from './components/task-update/task-update.compon
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
 @NgModule({
   declarations: [
     PageComponent,
@@ -26,6 +25,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TaskFormComponent,
     TaskComponent,
     TaskUpdateComponent,
+ 
   ],
   imports: [
     CommonModule,
@@ -36,6 +36,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TranslateModule,
     SharedModule,
     DragDropModule,
+   
   ],
 })
 export class BoardModule {}

@@ -42,13 +42,14 @@ export class ColumnComponent implements OnInit {
   isTitleUpdatingProgress: boolean = false;
 
   public isCreateVisible: boolean = false;
-
+  public isImportant: boolean = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService,
     private boardService: BoardService,
 
     public dialog: MatDialog
+   
   ) {}
 
   ngOnInit() {

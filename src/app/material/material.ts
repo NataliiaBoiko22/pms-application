@@ -19,6 +19,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { DialogModule } from '@angular/cdk/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 const materialComponent: Array<object> = [
   MatButtonModule,
@@ -41,6 +43,7 @@ const materialComponent: Array<object> = [
   ScrollingModule,
   DialogModule,
   HttpClientModule,
+  MatCheckboxModule
 ];
 @NgModule({
   imports: [materialComponent],

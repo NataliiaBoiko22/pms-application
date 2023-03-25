@@ -2,7 +2,6 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Task } from 'src/app/core/types/tasks.types';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/app/core/services/http.service';
-
 import { BoardService } from '../../services/board.service';
 import { TaskUpdateComponent } from '../task-update/task-update.component';
 import { MatDialogConfig } from '@angular/material/dialog';
@@ -31,7 +30,7 @@ export class TaskComponent {
     private boardService: BoardService,
     public dialog: MatDialog,
     public columnComponent: ColumnComponent,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
   ) {}
 
   deleteTask() {
@@ -103,4 +102,6 @@ export class TaskComponent {
       data: this.taskData.description,
     });
   }
+
+ 
 }
