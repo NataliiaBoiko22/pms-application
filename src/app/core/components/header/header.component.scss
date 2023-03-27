@@ -15,10 +15,15 @@
     -webkit-text-stroke: 0.001em $white;
     color: $blue;
   }
+  &__logo-link:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+  }
   &__logo-svg {
     width: 36px;
     margin-right: 5px;
-  }
+  }пше
   &__buttons-center {
     display: flex;
     gap: 5px;

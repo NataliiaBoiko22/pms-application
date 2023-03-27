@@ -67,4 +67,8 @@ export class HeaderComponent {
   openDialogBoard(): void {
     this.dialog.open(BoardAddDialogComponent);
   }
+  toWelcomePage(){
+  
+    this.router.navigate(['welcome']);
+  }
 }
