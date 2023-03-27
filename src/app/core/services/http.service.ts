@@ -30,7 +30,6 @@ import {
 })
 export class HttpService {
   url = 'http://localhost:3000';
-
   usersPath = '/users';
 
   signUpPath = '/auth/signup';
