@@ -29,7 +29,9 @@ import {
   providedIn: 'root',
 })
 export class HttpService {
-  url = 'http://localhost:3000';
+  // url = 'http://localhost:3000';
+  url = 'https://backend-for-my-project-production.up.railway.app';
+
   usersPath = '/users';
 
   signUpPath = '/auth/signup';
