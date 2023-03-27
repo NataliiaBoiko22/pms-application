@@ -20,7 +20,6 @@ export class TaskFormComponent {
   formGroup: FormGroup = new FormGroup({
     title: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
-    isImportant: new FormControl(false),
   });
 
   public closeModal(): void {
@@ -33,14 +32,12 @@ export class TaskFormComponent {
   ) {}
 
   createTask(): void {
-    
-    
     this.httpService
       .createTask(this.boardId, this.columnId, {
         ...this.formGroup.value,
         order: this.boardService.getMaxOrderTask(this.columnId),
         userId: localStorage.getItem('userId'),
-        users: []
+        users: [],
       })
       .subscribe((task) => {
         if ('_id' in task) {

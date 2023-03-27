@@ -154,7 +154,6 @@ export class HttpService {
     boardId: string,
     params: ColumnBody
   ): Observable<Column | Observable<never>> {
-    console.log(boardId);
     return this.http
       .post<Column>(
         this.url + this.boardsPath + '/' + boardId + this.columnsPath,
